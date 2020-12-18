@@ -1,15 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TargetBehavior.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
 
 [node name="Target" type="Node2D"]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="TargetBody" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="TargetCollisionShape" type="CollisionShape2D" parent="TargetBody"]
 shape = SubResource( 1 )
 
-[node name="Polygon2D" type="Polygon2D" parent="KinematicBody2D"]
+[node name="TargetDrawPolygon" type="Polygon2D" parent="TargetBody"]
 color = Color( 0, 1, 0, 1 )
 polygon = PoolVector2Array( -0.010684, -4.99667, 1.33724, -4.83094, 2.50838, -4.35585, 3.52485, -3.54931, 4.3093, -2.55494, 4.83963, -1.29541, 5.0164, -0.0137763, 4.86172, 1.2789, 4.37559, 2.47215, 3.54695, 3.56595, 2.56363, 4.3062, 1.27095, 4.85863, 0.000364304, 5.02436, -1.23707, 4.88073, -2.47451, 4.3504, -3.54622, 3.53281, -4.34171, 2.47215, -4.82785, 1.26785, -5.03777, 0.0304179, -4.861, -1.29541, -4.35276, -2.4776, -3.56832, -3.50512, -2.50766, -4.33376, -1.29232, -4.80884 )

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 export (int) var speed = 200 # px/s
 var velocity = Vector2()
@@ -35,4 +35,14 @@ func apply_input(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	apply_input(delta)
-	velocity = move_and_slide(velocity)
+	#velocity = move_and_slide(velocity)
+
+func _integrate_forces(state):
+	acceleration.y = Input.get_action_strength('down') - Input.get_action_strength('up')
+	acceleration.x = Input.get_action_strength('right') - Input.get_action_strength('left')
+	acceleration = acceleration.normalized()
+	
+	# The method used by the physics engine with damping
+	# is the same one above that caps max speed related
+	# to damping (so, simple drag force?).
+	applied_force = acceleration * 2000

@@ -8,6 +8,8 @@ func _ready():
 	var tscene = load('res://Target.tscn')
 	var target = tscene.instance()
 	
+	target.position = Vector2(100, 100)
+	
 	add_child(player)
 	add_child(target)
 
