@@ -9,6 +9,8 @@ radius = 5.0
 
 [node name="TargetBody" type="RigidBody2D" parent="."]
 gravity_scale = 0.0
+contacts_reported = 5
+contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="TargetCollisionShape" type="CollisionShape2D" parent="TargetBody"]
