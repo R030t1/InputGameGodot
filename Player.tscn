@@ -5,6 +5,7 @@
 [node name="Player" type="Node2D"]
 
 [node name="PlayerBody" type="RigidBody2D" parent="."]
+mode = 2
 gravity_scale = 0.0
 linear_damp = 10.0
 script = ExtResource( 1 )

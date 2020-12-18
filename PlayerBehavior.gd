@@ -43,6 +43,6 @@ func _integrate_forces(state):
 	acceleration = acceleration.normalized()
 	
 	# The method used by the physics engine with damping
-	# is the same one above that caps max speed related
+	# is the same one above that caps max speed relative
 	# to damping (so, simple drag force?).
 	applied_force = acceleration * 2000
