@@ -37,7 +37,7 @@ func _process(delta):
 	apply_input(delta)
 	#velocity = move_and_slide(velocity)
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	acceleration.y = Input.get_action_strength('down') - Input.get_action_strength('up')
 	acceleration.x = Input.get_action_strength('right') - Input.get_action_strength('left')
 	acceleration = acceleration.normalized()
