@@ -5,7 +5,7 @@ func _ready():
 	var pscene = load('res://Player.tscn')
 	var player = pscene.instance()
 	
-	var cscene = load('res://Carney.tscn')
+	var cscene = load('res://Carny.tscn')
 	var carney = cscene.instance()
 	
 	add_child(player)

@@ -37,7 +37,7 @@ func _on_target_hit():
 
 # Could be another logging class, but we use the window information.
 func _on_input_event(camera: Node, event: InputEvent, shape: int):
-	pass
+	print(event)
 	
 func _on_size_changed():
 	resize()
