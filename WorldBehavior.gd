@@ -5,13 +5,11 @@ func _ready():
 	var pscene = load('res://Player.tscn')
 	var player = pscene.instance()
 	
-	var tscene = load('res://Target.tscn')
-	var target = tscene.instance()
-	
-	target.position = Vector2(100, 100)
+	var cscene = load('res://Carney.tscn')
+	var carney = cscene.instance()
 	
 	add_child(player)
-	add_child(target)
+	add_child(carney)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
