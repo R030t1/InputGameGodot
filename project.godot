@@ -19,6 +19,10 @@ config/name="InputGameGodot"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=800
+
 [input]
 
 left={

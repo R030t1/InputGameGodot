@@ -4,14 +4,10 @@ var tscene = null
 var target = null
 
 func _ready():
-	tscene = load('res://Target.tscn')
-	reset()
-	
-	connect('input_event', self, '_on_input_event')
-	input_pickable = true
-	
 	get_tree().get_root().connect('size_changed', self, '_on_size_changed')
 	resize()
+	tscene = load('res://Target.tscn')
+	reset()
 	
 func resize():
 	var ww = get_tree().get_root().size.x
@@ -32,16 +28,12 @@ func reset():
 	add_child(target)
 
 func _on_target_hit():
-	# Need to tabulate hit here, as reset is called on other events.
+	# Need to record hit here as reset is called on other events.
 	reset()
 
-# Could be another logging class, but we use the window information.
-func _on_input_event(camera: Node, event: InputEvent, shape: int):
-	print(event)
-	
-# This gets controller input but the above does not.
+# input_event signal does not get controller/joystick movement.
 func _unhandled_input(event):
-	print('.')
+	print(event)
 	
 func _on_size_changed():
 	resize()
