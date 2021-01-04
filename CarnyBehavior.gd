@@ -39,6 +39,10 @@ func _on_target_hit():
 func _on_input_event(camera: Node, event: InputEvent, shape: int):
 	print(event)
 	
+# This gets controller input but the above does not.
+func _unhandled_input(event):
+	print('.')
+	
 func _on_size_changed():
 	resize()
 	reset()
